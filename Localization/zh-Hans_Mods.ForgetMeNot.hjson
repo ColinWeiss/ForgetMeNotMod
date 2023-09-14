@@ -1,0 +1,33 @@
+Items: {
+	Sandsteel: {
+		DisplayName: Sandsteel
+		Tooltip: ""
+	}
+
+	DoomDesire: {
+		DisplayName: 破灭之愿
+		Tooltip: 将一切希望粉碎殆尽，梦境的终结
+	}
+
+	DeathStar: {
+		DisplayName: 暗决死星
+		Tooltip: ""
+	}
+
+	Arathi: {
+		Tooltip:
+			'''
+			虽然是一把弓，但作为吸取恶念进行射击的道具，射程相当近并且弹幕会很快消失
+			不过由于弓的主人为其倾注了无与伦比的力量，它可以打开猩红和腐化的门扉并释放其中的恶念
+			因此这把魔弓被极端者视为珍宝，用其来进行作战
+			'''
+		DisplayName: 阿拉希
+	}
+}
+
+Projectiles: {
+	Deathboom.DisplayName: Deathboom
+	DeathLaser.DisplayName: Death Laser
+	ArathiRed.DisplayName: 猩红腐败
+	ArathiPurple.DisplayName: 血泥污染
+}

@@ -1,13 +1,28 @@
-# This file will automatically update with entries for new content after a build and reload
-
 Items: {
-	Origin: {
-		DisplayName: XXX
-		Tooltip: ""
-	}
-
 	Sandsteel: {
 		DisplayName: Sandsteel
 		Tooltip: ""
 	}
+
+	DoomDesire: {
+		DisplayName: Doom Desire
+		Tooltip: ""
+	}
+
+	DeathStar: {
+		DisplayName: Death Star
+		Tooltip: ""
+	}
+
+	Arathi: {
+		Tooltip: ""
+		DisplayName: Arathi
+	}
+}
+
+Projectiles: {
+	Deathboom.DisplayName: Deathboom
+	DeathLaser.DisplayName: Death Laser
+	ArathiRed.DisplayName: Arathi Red
+	ArathiPurple.DisplayName: Arathi Purple
 }

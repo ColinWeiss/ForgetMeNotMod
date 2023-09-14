@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace ForgetMeNot
 {
-	public class ForgetMeNot : Mod
-	{
+    public class ForgetMeNot : Mod
+    {
     }
 }

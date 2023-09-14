@@ -1,3 +1,4 @@
-displayName = 梦碎的希冀
-author = 1ceco & ColinWeiss
+displayName = [c/FFEC8B:梦碎的希冀][i:3580]-[c/00CED1:ForgetMeNot]
+author = [i:4730]【1ceco & ColinWeiss】
 version = 0.1
+homepage = https://github.com/ColinWeiss/ForgetMeNotMod

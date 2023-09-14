@@ -8,10 +8,13 @@ namespace ForgetMeNot.Common
 {
     public abstract class FmnModItem : ModItem
     {
+        //item setting
         public void SetSize( int width , int height )
         {
             Item.width = width;
             Item.height = height;
         }
+     
+        //
     }
 }
