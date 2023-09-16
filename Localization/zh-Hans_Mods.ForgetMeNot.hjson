@@ -28,6 +28,8 @@ Items: {
 Projectiles: {
 	Deathboom.DisplayName: Deathboom
 	DeathLaser.DisplayName: Death Laser
-	ArathiRed.DisplayName: 猩红腐败
-	ArathiPurple.DisplayName: 血泥污染
+	// ArathiRed.DisplayName: Arathi Red
+	// ArathiPurple.DisplayName: Arathi Purple
+	ArathiPurpleProj.DisplayName: 猩红腐败
+	ArathiRedProj.DisplayName: 血泥污染
 }

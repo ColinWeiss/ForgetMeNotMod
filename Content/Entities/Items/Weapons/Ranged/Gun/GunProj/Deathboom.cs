@@ -5,7 +5,7 @@ using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgetMeNot.Content.Entities.Items.Weapons
+namespace ForgetMeNot.Content.Entities.Items.Weapons.Ranged.Gun.GunProj
 {
     public class Deathboom : ModProjectile
     {

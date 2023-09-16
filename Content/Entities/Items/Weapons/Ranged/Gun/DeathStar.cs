@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Audio;
 
-namespace ForgetMeNot.Content.Entities.Items.Weapons
+namespace ForgetMeNot.Content.Entities.Items.Weapons.Ranged.Gun
 {
 	public class DeathStar : FmnModItem
 	{

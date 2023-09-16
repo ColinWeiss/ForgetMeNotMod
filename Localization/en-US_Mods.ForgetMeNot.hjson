@@ -25,4 +25,6 @@ Projectiles: {
 	DeathLaser.DisplayName: Death Laser
 	ArathiRed.DisplayName: Arathi Red
 	ArathiPurple.DisplayName: Arathi Purple
+	ArathiPurpleProj.DisplayName: Arathi Purple Proj
+	ArathiRedProj.DisplayName: Arathi Red Proj
 }

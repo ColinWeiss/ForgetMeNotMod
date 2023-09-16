@@ -8,10 +8,10 @@ using Terraria.ModLoader;
 using Terraria.ID;
 
 
-namespace ForgetMeNot.Content.Entities.Items.Weapons
+namespace ForgetMeNot.Content.Entities.Items.Weapons.Ranged.Bow.BowProj
 {
 
-    public class ArathiRed : ModProjectile
+    public class ArathiRedProj : ModProjectile
     {
 
         public override void SetStaticDefaults()
@@ -92,7 +92,7 @@ namespace ForgetMeNot.Content.Entities.Items.Weapons
             {
                 Vector2 position = base.Projectile.oldPos[i] - Main.screenPosition + vector + new Vector2(0f, base.Projectile.gfxOffY);
                 Color color = base.Projectile.GetAlpha(Color.White) * ((float)(base.Projectile.oldPos.Length - i) / (float)base.Projectile.oldPos.Length);
-                Texture2D texture = (i == 0) ? ModContent.Request<Texture2D>("ForgetMeNot/Content/Entities/Items/Weapons/ArathiProjectile", (ReLogic.Content.AssetRequestMode)2).Value : TextureAssets.Projectile[base.Projectile.type].Value;
+                Texture2D texture = (i == 0) ? ModContent.Request<Texture2D>("ForgetMeNot/Content/Entities/Items/Weapons/Ranged/Bow/BowProj/ArathiProjectile", (ReLogic.Content.AssetRequestMode)2).Value : TextureAssets.Projectile[base.Projectile.type].Value;
                 spriteBatch.Draw(texture, position, null, color, base.Projectile.rotation, vector, base.Projectile.scale, effects, 0f);
             }
             return false;

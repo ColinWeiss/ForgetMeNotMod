@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Audio;
 
-namespace ForgetMeNot.Content.Entities.Items.Weapons
+namespace ForgetMeNot.Content.Entities.Items.Weapons.Ranged.Bow
 {
 	public class Arathi : ModItem
 	{
@@ -34,8 +34,7 @@ namespace ForgetMeNot.Content.Entities.Items.Weapons
 			Item.crit = 8;
 			Item.maxStack = 1;
 			Item.scale = 1.4f;
-			Item.useAmmo = AmmoID.Arrow;
-			Item.shoot = base.Mod.Find<ModProjectile>("ArathiRed").Type;
+			Item.shoot = base.Mod.Find<ModProjectile>("ArathiRedProj").Type;
 			Item.shootSpeed = 12f;
 			Item.noMelee = true;
 		}
@@ -44,11 +43,11 @@ namespace ForgetMeNot.Content.Entities.Items.Weapons
 			for (int i = 0; i < 3; i++)
 			{
 
-				type = ((Main.rand.Next(2) == 0) ? base.Mod.Find<ModProjectile>("ArathiRed").Type : base.Mod.Find<ModProjectile>("ArathiPurple").Type);
+				type = ((Main.rand.Next(2) == 0) ? base.Mod.Find<ModProjectile>("ArathiRedProj").Type : base.Mod.Find<ModProjectile>("ArathiPurpleProj").Type);
 				Projectile.NewProjectile(source, position, Utils.RotatedByRandom(new Vector2(velocity.X, velocity.Y), 0.2617993950843811), type, damage, knockback, player.whoAmI, 0f, 0f);
 				if (Main.rand.Next(2) == 0)
 				{
-					type = ((Main.rand.Next(2) == 0) ? base.Mod.Find<ModProjectile>("ArathiRed").Type : base.Mod.Find<ModProjectile>("ArathiPurple").Type);
+					type = ((Main.rand.Next(2) == 0) ? base.Mod.Find<ModProjectile>("ArathiRedProj").Type : base.Mod.Find<ModProjectile>("ArathiPurpleProj").Type);
 					Projectile.NewProjectile(source, position, Utils.RotatedByRandom(new Vector2(velocity.X, velocity.Y), 0.2617993950843811), type, damage, knockback, player.whoAmI, 0f, 0f);
 				}
 			}

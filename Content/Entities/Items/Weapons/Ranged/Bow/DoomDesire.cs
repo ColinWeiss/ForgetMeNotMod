@@ -3,12 +3,11 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 
-namespace ForgetMeNot.Content.Entities.Items.Weapons
+namespace ForgetMeNot.Content.Entities.Items.Weapons.Ranged.Bow
 { 
     public class DoomDesire : FmnModItem
     {
@@ -46,18 +45,17 @@ namespace ForgetMeNot.Content.Entities.Items.Weapons
         {
             return new Vector2(-5f, 0f);//手持的位置调整
         }
-       public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-		{
-           
-            for (int index = 0; index < 8; index++)
-            {
-                float spread = 0f * 0f; //10 degree cone
-                double baseAngle = System.Math.Atan2(velocity.X, velocity.Y);
-                double randomAngle = baseAngle + (Main.rand.NextFloat() - 0.5f) * spread;
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
 
-                float SpeedX = velocity.X + (float)Main.rand.Next(-180,231) * 0.05f;
-                float SpeedY = velocity.Y + (float)Main.rand.Next(-50, 51) * 0.05f;
-                Projectile.NewProjectile(source, position.X, position.Y, SpeedX, SpeedY, type, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+            for (int index = 0; index < 6; index++)
+            {
+             
+                float SpeedX = velocity.X + (float)Main.rand.Next(-40, 41) * 0.05f;
+                float SpeedY = velocity.Y + (float)Main.rand.Next(-40, 41) * 0.05f;
+                int proj = Projectile.NewProjectile(source, position.X, position.Y, SpeedX, SpeedY, type, damage, knockback, player.whoAmI, 0f, 0f, 0f);
+                Main.projectile[proj].extraUpdates += index;
+                Main.projectile[proj].noDropItem = true;
             }
             if (Main.rand.Next(5) == 0)
             {

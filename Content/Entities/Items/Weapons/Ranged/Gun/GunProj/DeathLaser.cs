@@ -5,13 +5,13 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ForgetMeNot.Content.Entities.Items.Weapons
+namespace ForgetMeNot.Content.Entities.Items.Weapons.Ranged.Gun.GunProj
 {
     public class DeathLaser : ModProjectile
     {
         public override void SetStaticDefaults()
         {
-            // base.DisplayName.SetDefault("暗无天日");
+       
             ProjectileID.Sets.TrailCacheLength[base.Projectile.type] = 5;
             ProjectileID.Sets.TrailingMode[base.Projectile.type] = 0;
         }
