@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace ForgetMeNot.Common
+namespace ForgetMeNot.Common.Items
 {
 	public class AssassinDamageClass : DamageClass
 	{

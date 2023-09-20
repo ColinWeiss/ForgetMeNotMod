@@ -18,6 +18,16 @@ Items: {
 		Tooltip: ""
 		DisplayName: Arathi
 	}
+
+	Duke: {
+		DisplayName: Duke
+		Tooltip: ""
+	}
+
+	CGUN: {
+		DisplayName: C G U N
+		Tooltip: ""
+	}
 }
 
 Projectiles: {

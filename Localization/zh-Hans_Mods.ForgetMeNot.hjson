@@ -23,6 +23,16 @@ Items: {
 			'''
 		DisplayName: 阿拉希
 	}
+
+	Duke: {
+		// DisplayName: Duke
+		// Tooltip: ""
+	}
+
+	CGUN: {
+		DisplayName: Colin的精确射手
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
