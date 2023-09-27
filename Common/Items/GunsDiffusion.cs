@@ -36,48 +36,46 @@ namespace ForgetMeNot.Common.Items
 
         public override void SetDefaults(Item item)
         {
-            
-                //这里对一些枪械的精准度进行初始化.
-                base.SetDefaults(item);
-            
+
+            //这里对一些枪械的精准度进行初始化.
+            base.SetDefaults(item);
 
         }
 
         public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
-            if (item.ModItem.Mod is not null)
+
+            if (item.useAmmo == AmmoID.Bullet)
             {
-                if (item.useAmmo == AmmoID.Bullet && item.ModItem.Mod is ForgetMeNot)
+                float currentRot = velocity.ToRotation();
+                float cDiffusion = player.GetModPlayer<GunsDiffusion_PlayerEffect>().Diffusion + Diffusion;
+                cDiffusion = Math.Clamp(cDiffusion, 0, 90);
+                if (Main.rand.Next(100) <= Success)
                 {
-                    float currentRot = velocity.ToRotation();
-                    float cDiffusion = player.GetModPlayer<GunsDiffusion_PlayerEffect>().Diffusion + Diffusion;
-                    cDiffusion = Math.Clamp(cDiffusion, 0, 90);
-                    if (Main.rand.Next(100) <= Success)
-                    {
-                        CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y, player.width, player.height), new Color(50, 205, 50), "精确打击！", false, false);
-                        SoundStyle strike = new SoundStyle("ForgetMeNot/Sounds/Custom/Accurate Strike", 0);
-                        strike.Volume = 0.5f;
-                        SoundEngine.PlaySound(strike, default(Vector2?), null);
-                    }
-                    else if (cDiffusion > 0)
-                    {
-                        if (Main.rand.NextBool())
-                            currentRot += Main.rand.Next((int)((double)cDiffusion)).GetRot();
-                        else
-                            currentRot -= Main.rand.Next((int)((double)cDiffusion)).GetRot();
-                    }
-                    velocity = currentRot.ToRotationVector2() * velocity.Length();
-                    player.itemRotation = currentRot;
+                    CombatText.NewText(new Rectangle((int)player.position.X, (int)player.position.Y, player.width, player.height), new Color(50, 205, 50), "精确打击！", false, false);
+                    SoundStyle strike = new SoundStyle("ForgetMeNot/Sounds/Custom/Accurate Strike", 0);
+                    strike.Volume = 0.5f;
+                    SoundEngine.PlaySound(strike, default(Vector2?), null);
                 }
-              
+                else if (cDiffusion > 0)
+                {
+                    if (Main.rand.NextBool())
+                        currentRot += Main.rand.Next((int)((double)cDiffusion)).GetRot();
+                    else
+                        currentRot -= Main.rand.Next((int)((double)cDiffusion)).GetRot();
+                }
+                velocity = currentRot.ToRotationVector2() * velocity.Length();
+                player.itemRotation = currentRot;
+                base.ModifyShootStats(item, player, ref position, ref velocity, ref type, ref damage, ref knockback);
             }
-            base.ModifyShootStats(item, player, ref position, ref velocity, ref type, ref damage, ref knockback);
+
+
         }
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
 
-            if (item.useAmmo == AmmoID.Bullet && item.ModItem.Mod is ForgetMeNot)
+            if (item.useAmmo == AmmoID.Bullet)
             {
                 int insertIndex = tooltips.FindIndex(a => a.Name == "CritChance");
                 if (insertIndex != -1)
@@ -110,9 +108,11 @@ namespace ForgetMeNot.Common.Items
                         diffusion.OverrideColor = new Color(255, 177, 43);
                         tooltips.Insert(insertIndex + 1, diffusion);
                     }
+
                 }
-              
             }
+
+
 
 
             if ((item.accessory || item.headSlot > 0 || item.bodySlot > 0 || item.legSlot > 0) && Diffusion > 0)
@@ -137,12 +137,12 @@ namespace ForgetMeNot.Common.Items
                         tooltips.Insert(insertIndex + 1, diffusion1);
                     }
                 }
-              
+
             }
 
-
-
             base.ModifyTooltips(item, tooltips);
+
+
         }
 
         public override void UpdateEquip(Item item, Player player)
